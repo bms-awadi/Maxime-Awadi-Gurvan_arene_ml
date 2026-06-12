@@ -92,7 +92,15 @@ def print_prediction(result: dict) -> None:
     if "position" in result:
         print(f"  Poste    : {result['position']}")
     if "age" in result:
-        print(f"  Age      : {result['age']} ans")
+        age_val = result["age"]
+        import pandas as pd
+        if pd.isna(age_val) or age_val is None or str(age_val).strip() in ("?", "nan", "None"):
+            print("  Age      : Inconnu")
+        else:
+            try:
+                print(f"  Age      : {int(float(age_val))} ans")
+            except (ValueError, TypeError):
+                print("  Age      : Inconnu")
     print()
     print(f"  Valeur estimée  : {result['valeur_estimee_str']}")
     if "valeur_reelle_str" in result:

@@ -9,6 +9,7 @@ Usage :
 
 import argparse
 import json
+import pandas as pd
 from .loader import load_champion
 from .predictor import predict_player, predict_by_name
 from .leaderboard import leaderboard_predictions
@@ -49,6 +50,15 @@ def main():
             X["position"] = df_raw["position"].values
         if "current_club_name" in df_raw.columns:
             X["club_name"] = df_raw["current_club_name"].values
+        
+        # Calcul de l'âge du joueur
+        if "date_of_birth" in df_raw.columns:
+            dob = pd.to_datetime(df_raw["date_of_birth"], errors="coerce")
+            import datetime
+            current_year = datetime.datetime.now().year
+            X["age"] = current_year - dob.dt.year
+        else:
+            X["age"] = None
 
         if args.player:
             result = predict_by_name(model, args.player, X)
