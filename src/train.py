@@ -1,6 +1,8 @@
 import os
 import joblib
+from pathlib import Path
 from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
@@ -8,6 +10,8 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from xgboost import XGBRegressor
 from sklearn.metrics import r2_score
 from preprocess import preprocess
+
+ROOT = Path(__file__).resolve().parent
 
 def get_modeles():
     return {
@@ -41,13 +45,13 @@ def arene(modeles, X_train, X_test, y_train, y_test, titre="Classement"):
     return resultats
 
 
-def sauvegarder_champion(champion_modele, scaler, chemin="models/champion.joblib"):
-    """Sauvegarde le modèle champion et son scaler sous forme de dictionnaire."""
+def sauvegarder_champion(pipeline, chemin="models/champion.joblib"):
+    """Sauvegarde le pipeline champion (scaler + modèle) dans un fichier joblib."""
     dossier = os.path.dirname(chemin)
     if dossier:
         os.makedirs(dossier, exist_ok=True)
-    joblib.dump({"modele": champion_modele, "scaler": scaler}, chemin)
-    print(f"Modèle champion et scaler sauvegardés dans {chemin}")
+    joblib.dump(pipeline, chemin)
+    print(f"Pipeline champion sauvegardé dans {chemin}")
 
 def sauvegarder_tous_les_modeles(modeles, scaler, dossier="models/baselines"):
     """Entraîne tous les modèles sur les données normalisées et les sauvegarde dans un dossier."""
@@ -71,14 +75,15 @@ def main():
                        titre="Classement des modèles")
     champion_nom = classement[0][1]
     
-    print("Phase 3 : Normalisation et entraînement final du champion")
-    scaler = StandardScaler().fit(X_train)
-    X_train_scaled = scaler.transform(X_train)
-    final_champion = modeles[champion_nom]
-    final_champion.fit(X_train_scaled, y_train)
-        
+    print("Phase 3 : Création du pipeline final du champion")
+    pipeline_champion = Pipeline([
+        ("scaler", StandardScaler()),
+        ("modele", modeles[champion_nom]),
+    ])
+    pipeline_champion.fit(X_train, y_train)
+
     print("Phase 4 : Sauvegarde")
-    sauvegarder_champion(final_champion, scaler)
+    sauvegarder_champion(pipeline_champion, chemin=str(ROOT / "models" / "champion.joblib"))
 
 if __name__ == "__main__":
     main()
