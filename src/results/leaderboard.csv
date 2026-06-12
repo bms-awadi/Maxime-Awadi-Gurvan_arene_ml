@@ -1,0 +1,2 @@
+Rang,model,MAE (€),RMSE (€),R²,MAPE (%),Train_R²,CV_CV_MAE_mean,CV_CV_MAE_std,CV_CV_RMSE_mean,CV_CV_RMSE_std,CV_CV_R2_mean,CV_CV_R2_std
+1,Champion (test),0.53,0.73,0.7737,4.26,0.8288,0.53,0.0,0.72,0.0,0.7822,0.0048

@@ -1,0 +1,14 @@
+{
+  "model": "Champion (test)",
+  "MAE (\u20ac)": 0.53,
+  "RMSE (\u20ac)": 0.73,
+  "R\u00b2": 0.7737,
+  "MAPE (%)": 4.26,
+  "Train_R\u00b2": 0.8288,
+  "CV_CV_MAE_mean": 0.53,
+  "CV_CV_MAE_std": 0.0,
+  "CV_CV_RMSE_mean": 0.72,
+  "CV_CV_RMSE_std": 0.0,
+  "CV_CV_R2_mean": 0.7822,
+  "CV_CV_R2_std": 0.0048
+}
