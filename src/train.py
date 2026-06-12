@@ -61,8 +61,8 @@ def sauvegarder_tous_les_modeles(modeles, scaler, dossier="models/baselines"):
         print(f"Modèle '{nom}' sauvegardé dans {chemin}")
 
 def main():
-    print("Phase 1 : Split Train/Test")
-    X_train, X_test, y_train, y_test = preprocess()
+    print("Phase 1 : Récupération des données")
+    X_test, X_train, y_test, y_train = preprocess()  # ordre retourné par preprocess()
     print(f"Taille train : {X_train.shape[0]} joueurs, test : {X_test.shape[0]} joueurs")
 
     print("Phase 2 : l'Arène")
