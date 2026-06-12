@@ -27,6 +27,8 @@ Prédire le prix d'un joueur sur le marché des transferts en fonction de ses st
 - [1. Problème et Cible](#1-problème-et-cible)
 - [2. Dataset](#2-dataset)
 - [3. Entraînement et Arène des modèles](#3-entraînement-et-arène-des-modèles)
+- [4. Évaluation du modèle Champion](#4-évaluation-du-modèle-champion)
+- [5. Prédiction avec le modèle Champion](#5-prédiction-avec-le-modèle-champion)
 
 ---
 
@@ -235,6 +237,14 @@ Les fichiers de résultats sont générés dans `results/` :
 - `features_Champion.png` — Top 20 features par importance
 - `metrics_Champion.json` — Métriques au format JSON
 - `leaderboard.csv` — Comparaison de tous les modèles
+
+**Prédit vs Réel & Résidus**
+
+![Évaluation Champion](src/results/eval_Champion.png)
+
+**Importance des features**
+
+![Features Champion](src/results/features_Champion.png)
 
 ---
 
