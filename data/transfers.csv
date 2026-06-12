@@ -527,7 +527,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 667120,2026-02-11,25/26,10789,1391,Braga B,Zalaegerszeg,0.000,,André Ferreira
 817548,2026-02-11,25/26,675,67241,Slavia Sofia,Kuban,0.000,25000.000,Artem Varganov
 955333,2026-02-11,25/26,26459,65423,Veres Rivne,Feniks Mariupol,0.000,75000.000,Nazar Balaba
-1082832,2026-02-11,25/26,2431,515,Estrela Amadora,Without Club,,400000.000,Ryan
+1082832,2026-02-11,25/26,2431,515,Estrela Amadora,Without Club,,400000.000,Ryan Carlos
 57303,2026-02-10,25/26,515,54585,Without Club,Sepsi OSK,,100000.000,Joeri de Kamps
 712857,2026-02-10,25/26,932,9526,Loko Moscow,Turan Tovuz,0.000,400000.000,Mark Mampassi
 1160722,2026-02-10,25/26,22881,61351,Krasnodar II,Orenburg-2,12000.000,,Egor Postrigan
@@ -1057,7 +1057,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 404847,2026-01-01,25/26,81401,515,SC Poltava,Without Club,,300000.000,Oleksiy Khakhlyov
 429157,2026-01-01,25/26,30697,515,Podillya,Without Club,,200000.000,Yuriy Kozyrenko
 443338,2026-01-01,25/26,2423,10492,Santa Clara,Juventude,,750000.000,Alisson Safira
-461595,2026-01-01,25/26,18303,515,FC Oleksandriya,Without Club,,300000.000,Théo Ndicka Matam
+461595,2026-01-01,25/26,18303,515,FC Oleksandriya,Without Club,,300000.000,Théo Ndicka
 470831,2026-01-01,25/26,97548,86209,FC Lisne,Livyi Bereg,0.000,,Vikentiy Voloshyn
 479641,2026-01-01,25/26,40090,515,Kauno Zalgiris,Without Club,,300000.000,Jair Tavares
 490496,2026-01-01,25/26,2741,515,Baltika,Without Club,,500000.000,Diego Luna
@@ -1646,7 +1646,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 898356,2025-08-13,25/26,2919,44223,Monza,Giana Erminio,0.000,325000.000,Alessandro Berretta
 965816,2025-08-13,25/26,117524,105819,Vorskla-2,Avangard Lozova,0.000,,Stanislav Prus
 997827,2025-08-13,25/26,1075,13222,Braga,CD Mirandés,0.000,3500000.000,Thiago Helguera
-1082832,2025-08-13,25/26,10010,2431,EC Bahia,Estrela Amadora,400000.000,400000.000,Ryan
+1082832,2025-08-13,25/26,10010,2431,EC Bahia,Estrela Amadora,400000.000,400000.000,Ryan Carlos
 88262,2025-08-12,25/26,515,123,Without Club,Retired,,200000.000,Dedryck Boyata
 203869,2025-08-12,25/26,2759,2760,Ross County,Partick Thistle,0.000,150000.000,Alex Samuel
 364237,2025-08-12,25/26,8024,2448,Arouca,Sporting Gijón,500000.000,1200000.000,Mamadou Loum
@@ -3174,7 +3174,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 1081349,2025-06-30,24/25,30697,86209,Podillya,Livyi Bereg,0.000,50000.000,Volodymyr Shvets
 1082519,2025-06-30,24/25,4031,276,Cosenza,Hellas Verona,0.000,100000.000,Charlys
 1082633,2025-06-30,24/25,26459,53646,Veres Rivne,Polissya,0.000,100000.000,Wendell
-1082832,2025-06-30,24/25,6992,10010,Chornomorets,EC Bahia,0.000,400000.000,Ryan
+1082832,2025-06-30,24/25,6992,10010,Chornomorets,EC Bahia,0.000,400000.000,Ryan Carlos
 1083960,2025-06-30,24/25,53646,978,Polissya,Vasco da Gama,0.000,600000.000,Cauã Paixão
 1097470,2025-06-30,24/25,10949,96939,Sporting B,Ibrachina U20,0.000,,Kauã Oliveira
 1100480,2025-06-30,24/25,7378,776,Portimonense,Coritiba FC,0.000,350000.000,Thiago Dombroski
@@ -3371,7 +3371,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 265153,2025-02-19,24/25,232,11127,Spartak Moscow,Ural,0.000,1500000.000,Aleksandr Selikhov
 541006,2025-02-19,24/25,8956,1124,Shamakhi ,Fakel Voronezh,100000.000,450000.000,Belajdi Pusi
 917405,2025-02-19,24/25,11755,1186,CSKA Moscow II,Torpedo Moscow,50000.000,100000.000,Vadim Churilov
-1082832,2025-02-19,24/25,10010,6992,EC Bahia,Chornomorets,0.000,500000.000,Ryan
+1082832,2025-02-19,24/25,10010,6992,EC Bahia,Chornomorets,0.000,500000.000,Ryan Carlos
 1123210,2025-02-19,24/25,16104,190,Copenhagen U19,Copenhagen,,,Hunor Németh
 1143806,2025-02-19,24/25,119780,6992,Polissya-2,Chornomorets,0.000,,Bogdan Panchyshyn
 205878,2025-02-18,24/25,2759,2999,Ross County,Hamilton Acad.,0.000,150000.000,Charlie Telfer
@@ -3655,7 +3655,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 354909,2025-01-27,24/25,607,1038,Venezia,Sampdoria,0.000,1800000.000,Giorgio Altare
 369267,2025-01-27,24/25,3524,409,Clermont Foot,Salzburg,0.000,1500000.000,Maximiliano Caufriez
 388363,2025-01-27,24/25,167,2,Augsburg,1.FC K'lautern,0.000,3000000.000,Maximilian Bauer
-461595,2025-01-27,24/25,504,18303,Grasshoppers,FC Oleksandriya,0.000,100000.000,Théo Ndicka Matam
+461595,2025-01-27,24/25,504,18303,Grasshoppers,FC Oleksandriya,0.000,100000.000,Théo Ndicka
 471286,2025-01-27,24/25,1124,568,Fakel Voronezh,Kaizer Chiefs,0.000,350000.000,Thabo Cele
 584427,2025-01-27,24/25,1306,653,Danubio FC,OFI Crete FC,0.000,650000.000,Kevin Lewis
 633114,2025-01-27,24/25,12567,979,Eldense,Moreirense ,0.000,200000.000,Joel Jorquera
@@ -4037,7 +4037,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 1025424,2024-12-31,24/25,41133,41231,Iberia 1999,Sochi,0.000,200000.000,Solomon Agbalaka
 1033486,2024-12-31,24/25,4128,14589,Amkar Perm,Orenburg,0.000,75000.000,Danil Kapustyanskiy
 1074482,2024-12-31,24/25,76417,15063,GD São-Carlense,Goiás EC U20,0.000,100000.000,Wendell
-1082832,2024-12-31,24/25,11449,10010,CRB,EC Bahia,0.000,500000.000,Ryan
+1082832,2024-12-31,24/25,11449,10010,CRB,EC Bahia,0.000,500000.000,Ryan Carlos
 1084075,2024-12-31,24/25,7008,76156,AC Oulu,Retrô,0.000,100000.000,Marcos André
 1111166,2024-12-31,24/25,29224,173,Vestri,Odense BK,0.000,250000.000,Johannes Selvén
 1127413,2024-12-31,24/25,20151,2410,FC Buxoro,CSKA Moscow,0.000,100000.000,Amirhossein Reyvandi
@@ -4917,7 +4917,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 870187,2024-07-12,24/25,15136,10140,Guimarães B,SC Covilhã,0.000,200000.000,Rafa
 876716,2024-07-12,24/25,126,22443,C. Rizespor,Edirnespor,,50000.000,Emre Şimşek
 1021882,2024-07-12,24/25,41854,20698,Fenerbahce U19,Balikesirspor,0.000,,Yiğit Epözdemir
-1082832,2024-07-12,24/25,10010,11449,EC Bahia,CRB,0.000,500000.000,Ryan
+1082832,2024-07-12,24/25,10010,11449,EC Bahia,CRB,0.000,500000.000,Ryan Carlos
 1091130,2024-07-12,24/25,7179,16837,Tondela,Cianorte,,100000.000,Clinton
 63342,2024-07-11,24/25,11282,5432,Alanyaspor,Al-Nasr,0.000,200000.000,Leroy Fer
 180167,2024-07-11,24/25,1100,370,Brann,Aberdeen FC,355000.000,450000.000,Sivert Heltne Nilsen
@@ -8922,7 +8922,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 330909,2023-08-29,23/24,132,1268,NAC Breda,ADO Den Haag,0.000,450000.000,Jort van der Sande
 377219,2023-08-29,23/24,366,1049,Real Valladolid,Valencia,0.000,3000000.000,Selim Amallah
 409886,2023-08-29,23/24,385,7077,Fortuna Sittard,FC Cartagena,0.000,1000000.000,Úmaro Embaló
-461595,2023-08-29,23/24,2861,504,KV Oostende,Grasshoppers,,500000.000,Théo Ndicka Matam
+461595,2023-08-29,23/24,2861,504,KV Oostende,Grasshoppers,,500000.000,Théo Ndicka
 481084,2023-08-29,23/24,1049,366,Valencia,Real Valladolid,1800000.000,2500000.000,Marcos André
 603368,2023-08-29,23/24,4772,7160,NK Olimpija,Eyüpspor,2500000.000,1200000.000,Svit Seslar
 622801,2023-08-29,23/24,1038,6646,Sampdoria,Karagümrük,,800000.000,Flavio Paoletti
@@ -12404,7 +12404,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 1061660,2023-01-01,22/23,20277,38006,Girona U19,Girona FC B,,,Selvi Clua
 1065901,2023-01-01,22/23,24994,67731,Merelinense,Portimonense 23,0.000,,Midana Cassamá
 1078416,2023-01-01,22/23,33906,11199,Strasbourg U17,Strasbourg U19,,,Bradel Kiwa
-1082832,2023-01-01,22/23,17818,10010,Bahia U20,EC Bahia,,,Ryan
+1082832,2023-01-01,22/23,17818,10010,Bahia U20,EC Bahia,,,Ryan Carlos
 1082850,2023-01-01,22/23,98929,9540,Santos FC U17,Santos U20,,,Deivid Washington
 1091130,2023-01-01,22/23,76667,1693,Londrina-PR U20,Londrina-PR,,,Clinton
 1091519,2023-01-01,22/23,105167,80647,Joseense-PR U20,São Joseense,,,Caio Gomes
@@ -19942,7 +19942,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 874080,2020-10-01,20/21,18424,6932,Welling U18,Charlton U18,,,Mason Burstow
 965630,2020-10-01,20/21,25558,15539,Primavera,Coritiba U20,0.000,,Habraão
 1045568,2020-10-01,20/21,23590,88029,FK Mariupol U17,Ingulets U19,0.000,,Danylo Golub
-1082832,2020-10-01,20/21,16805,17818,Ponte Preta U20,Bahia U20,,,Ryan
+1082832,2020-10-01,20/21,16805,17818,Ponte Preta U20,Bahia U20,,,Ryan Carlos
 1143806,2020-10-01,20/21,26624,81207,PFC Lviv U17,PFC Lviv U19,,,Bogdan Panchyshyn
 19041,2020-09-30,20/21,6890,3840,Basaksehir,Adana Demirspor,0.000,150000.000,Gökhan Inler
 166230,2020-09-30,20/21,1301,327,Marítimo,NK Osijek,0.000,700000.000,Josip Vukovic
@@ -21039,7 +21039,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 541914,2020-07-03,20/21,28937,24176,Tukums,Soligorsk II,0.000,,Anton Kovalev
 653776,2020-07-03,20/21,515,5287,Without Club,Chernomorets N.,,100000.000,Ivan Timoshenko
 699265,2020-07-03,20/21,14299,11746,Master-Saturn,Rostov II,12000.000,75000.000,Danila Sukhomlinov
-461595,2020-07-02,20/21,12764,2861,Olymp. Lyon B,KV Oostende,0.000,,Théo Ndicka Matam
+461595,2020-07-02,20/21,12764,2861,Olymp. Lyon B,KV Oostende,0.000,,Théo Ndicka
 464632,2020-07-02,20/21,1402,21958,Olympiakos N.,PAEEK Kyrenia,0.000,100000.000,Konstantinos Karagiannis
 23553,2020-07-01,20/21,1269,468,PEC Zwolle,Sparta R.,0.000,675000.000,Lennart Thy
 42735,2020-07-01,20/21,58,157,RSC Anderlecht,KAA Gent,1500000.000,2500000.000,Sven Kums
@@ -21963,7 +21963,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 440774,2020-06-30,19/20,10867,750,AS Béziers,FC Sochaux,0.000,150000.000,Rayan Senhadji
 457859,2020-06-30,19/20,1104,4106,ACR Messina,Casertana,0.000,75000.000,Michele Avella
 460845,2020-06-30,19/20,2977,43560,KSV Roeselare,FC Brügge U21,0.000,525000.000,Siemen Voet
-461595,2020-06-30,19/20,2972,12764,Bourg-en-Bresse,Olymp. Lyon B,0.000,,Théo Ndicka Matam
+461595,2020-06-30,19/20,2972,12764,Bourg-en-Bresse,Olymp. Lyon B,0.000,,Théo Ndicka
 463792,2020-06-30,19/20,4033,416,Fermana,Torino,0.000,75000.000,Luca Gemello
 464632,2020-06-30,19/20,44858,2784,Alki Oroklini,APOEL Nicosia,0.000,100000.000,Konstantinos Karagiannis
 466452,2020-06-30,19/20,22559,11194,NK Dubrava ZG,NK Lokomotiva,0.000,300000.000,Ivan Milicevic
@@ -22650,7 +22650,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 974506,2020-01-01,19/20,17656,16805,Ponte Preta U17,Ponte Preta U20,,,Rafael Pontelo
 982545,2020-01-01,19/20,97133,15083,SC Inter Youth,Inter U20,,,Lucas Flores
 983977,2020-01-01,19/20,15037,9540,Atlético-MG U20,Santos U20,0.000,,Alex Fernandes
-1082832,2020-01-01,19/20,17656,16805,Ponte Preta U17,Ponte Preta U20,,,Ryan
+1082832,2020-01-01,19/20,17656,16805,Ponte Preta U17,Ponte Preta U20,,,Ryan Carlos
 33781,2019-12-31,19/20,56089,1032,Minnesota,Reading,0.000,1500000.000,Vito Mannone
 33873,2019-12-31,19/20,10625,989,Qarabağ,Bournemouth,0.000,5000000.000,Asmir Begovic
 93730,2019-12-31,19/20,10217,1420,Sarpsborg 08,Angers SCO,0.000,500000.000,Alexandre Letellier
@@ -22861,7 +22861,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 433257,2019-09-02,19/20,703,3302,Nott'm Forest,UD Almería,8850000.000,250000.000,Arvin Appiah
 447066,2019-09-02,19/20,9043,2759,Celtic B,Ross County,0.000,,Ewan Henderson
 449721,2019-09-02,19/20,1083,2698,Rostov,Rubin Kazan,0.000,175000.000,Nikolay Poyarkov
-461595,2019-09-02,19/20,12764,2972,Olymp. Lyon B,Bourg-en-Bresse,0.000,,Théo Ndicka Matam
+461595,2019-09-02,19/20,12764,2972,Olymp. Lyon B,Bourg-en-Bresse,0.000,,Théo Ndicka
 461954,2019-09-02,19/20,4521,68188,Besiktas U21,Guimarães U23,,,Berke Önde
 463792,2019-09-02,19/20,416,4033,Torino,Fermana,0.000,100000.000,Luca Gemello
 478366,2019-09-02,19/20,15136,2503,Guimarães B,Boavista,,275000.000,Miguel Reisinho
@@ -25358,7 +25358,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 831697,2019-01-01,18/19,96935,15580,Guarulhos U20,Leiria U19,,,Iago Siqueira
 930008,2019-01-01,18/19,11896,35740,Dortmund Yth.,Paderborn Yth.,0.000,,Lennart Koerdt
 1077957,2019-01-01,18/19,38927,39060,Bramfeld Yth.,SC Condor Yth.,0.000,,Yunus Atakaya
-1082832,2019-01-01,18/19,14679,17656,São Paulo U17,Ponte Preta U17,,,Ryan
+1082832,2019-01-01,18/19,14679,17656,São Paulo U17,Ponte Preta U17,,,Ryan Carlos
 1124775,2019-01-01,18/19,84692,76086,FShM U16,Akademia Rodina,0.000,,Nikolay Tyulenev
 80312,2018-12-31,18/19,2477,660,Karpaty Lviv,Shakhtar D.,0.000,1000000.000,Mykyta Shevchenko
 120262,2018-12-31,18/19,23611,2696,Olimpik Donetsk,KS Samara,0.000,300000.000,Dmytro Nemchaninov
@@ -27672,7 +27672,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 447257,2018-01-01,17/18,11135,11127,Nosta,Ural,,100000.000,Andrey Egorychev
 456182,2018-01-01,17/18,14298,11750,Akademia Rubin ,Rubin Kazan II,,175000.000,Danil Stepanov
 459655,2018-01-01,17/18,8517,15099,Genoa U19,Padova U19,0.000,,Matteo Lovato
-461595,2018-01-01,17/18,7813,12764,Olymp. Lyon U19,Olymp. Lyon B,,,Théo Ndicka Matam
+461595,2018-01-01,17/18,7813,12764,Olymp. Lyon U19,Olymp. Lyon B,,,Théo Ndicka
 471156,2018-01-01,17/18,17959,713,Vitebsk,BATE Borisov,,150000.000,Zakhar Volkov
 472243,2018-01-01,17/18,19210,21084,Stuttgart Yth.,Stuttgart U17,,,Lilian Egloff
 484599,2018-01-01,17/18,10492,6600,Juventude,Internacional,390000.000,800000.000,William Klaus
@@ -28788,7 +28788,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 460378,2017-07-01,17/18,50275,2861,KV Oostende U21,KV Oostende,,,Jelle Bataille
 460626,2017-07-01,17/18,54295,6326,Paris SG U17,Paris SG U19,,,Garissone Innocent
 460845,2017-07-01,17/18,6640,43560,Club Bruges U19,FC Brügge U21,,,Siemen Voet
-461595,2017-07-01,17/18,106295,7813,Olymp. Lyon U17,Olymp. Lyon U19,,,Théo Ndicka Matam
+461595,2017-07-01,17/18,106295,7813,Olymp. Lyon U17,Olymp. Lyon U19,,,Théo Ndicka
 461629,2017-07-01,17/18,14734,21609,Atl. Madrid U17,Atl.Madleño U18,,,Gustavo Assunção
 461654,2017-07-01,17/18,14281,36949,Dynamo Kyiv U17,Dynamo Kyiv U19,,,Taras Dmytruk
 461833,2017-07-01,17/18,29344,49568,Atalanta Youth,Atalanta U17,,,Caleb Okoli
@@ -32556,7 +32556,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 457341,2015-07-01,15/16,68634,44865,Fortuna W. Yth.,Volendam Youth,0.000,,Derry Murkin
 458417,2015-07-01,15/16,44870,53297,Almere City FC ,Almere City U17,,,Stijn Keller
 459965,2015-07-01,15/16,32797,53297,Utrecht Youth,Almere City U17,0.000,,Kubilay Köylü
-461595,2015-07-01,15/16,112061,106295,ASPTT Dijon Jgd,Olymp. Lyon U17,0.000,,Théo Ndicka Matam
+461595,2015-07-01,15/16,112061,106295,ASPTT Dijon Jgd,Olymp. Lyon U17,0.000,,Théo Ndicka
 461833,2015-07-01,15/16,29471,29344,Vicenza Yth.,Atalanta Youth,3000.000,,Caleb Okoli
 461936,2015-07-01,15/16,53956,48365,Sporting Sub-15,Sporting U17,,,Frederico Duarte
 461954,2015-07-01,15/16,43419,41791,Besiktas Yth,Besiktas U16,,,Berke Önde
@@ -35321,7 +35321,7 @@ player_id,transfer_date,transfer_season,from_club_id,to_club_id,from_club_name,t
 453737,2013-07-01,13/14,52015,11888,Hamborn 07 Yth.,Duisburg Yth.,0.000,,Marcel Lotka
 458588,2013-07-01,13/14,44351,73907,Kayserispor Yth,Kayserispor U19,,,Benhur Keser
 460378,2013-07-01,13/14,25003,49400,Club Brugge Yth,KV Oostende U17,0.000,,Jelle Bataille
-461595,2013-07-01,13/14,107847,112061,Dijon Jugend,ASPTT Dijon Jgd,0.000,,Théo Ndicka Matam
+461595,2013-07-01,13/14,107847,112061,Dijon Jugend,ASPTT Dijon Jgd,0.000,,Théo Ndicka
 461936,2013-07-01,13/14,53957,53956,Sporting Yth.,Sporting Sub-15,,,Frederico Duarte
 461963,2013-07-01,13/14,53955,53954,Benfica Yth,Benfica U15,,,Celton Biai
 470391,2013-07-01,13/14,32791,52790,Ajax Youth ,AFC Youth,0.000,,Jayden Braaf
