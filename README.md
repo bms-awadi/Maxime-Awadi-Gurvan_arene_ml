@@ -16,11 +16,17 @@ Prédire le prix d'un joueur sur le marché des transferts en fonction de ses st
 	fonction `preprocess()` qui orchestre le chargement des données, la préparation
 	et la séparation train/test (retourne `Xtest, Xtrain, Ytest, Ytrain`).
 
+- `src/train.py`: orchestre l'entraînement et la comparaison des modèles de régression
+	(Linear Regression, KNN Regressor, Decision Tree, Random Forest, Gradient Boosting, XGBoost).
+	Il compare les modèles sur le score R² (Arène) et exporte le champion final
+	avec son scaler associé sous `models/champion.joblib`.
+
 
 ## Table des matières
 
 - [1. Problème et Cible](#1-problème-et-cible)
 - [2. Dataset](#2-dataset)
+- [3. Entraînement et Arène des modèles](#3-entraînement-et-arène-des-modèles)
 
 ---
 
@@ -116,6 +122,32 @@ data/
 | `minutes_played` | Numérique | Pour normaliser les stats |
 | `championship_reputation` | Numérique (1-5) | Mythique `competitions.csv` |
 | `valuation_eur` | **CIBLE** | Régression |
+
+---
+
+## 3. Entraînement et Arène des modèles
+
+Le script `src/train.py` permet d'entraîner et de comparer plusieurs algorithmes de régression pour sélectionner le modèle le plus performant.
+
+### Algorithmes comparés
+Le projet intègre et compare les modèles suivants :
+- **Régression linéaire** : base linéaire de référence.
+- **KNN Regressor** : modèle basé sur les K plus proches voisins (sensible au scaling).
+- **Arbre de décision** : capture des relations locales non-linéaires.
+- **Random Forest** : forêt d'arbres de décision pour limiter le surapprentissage.
+- **Gradient Boosting & XGBoost** : techniques de boosting séquentiel à haute performance.
+
+### Exécution du script
+Pour lancer l'arène et entraîner le modèle champion :
+```bash
+python src/train.py
+```
+
+### Processus d'exécution du pipeline
+1. **Préparation des données** : Récupération des splits `X_train`, `X_test`, `y_train`, `y_test` depuis `preprocess()`.
+2. **L'Arène** : Entraînement de chaque modèle sur le jeu de données d'entraînement et tri automatique par score R² décroissant.
+3. **Entraînement Final** : Ajustement (fit) d'un `StandardScaler` sur le jeu d'entraînement, normalisation des caractéristiques, puis ré-entraînement final du modèle champion sur ces données normalisées.
+4. **Exportation** : Sauvegarde d'un dictionnaire comprenant le modèle champion et son scaler associé sous `models/champion.joblib`.
 
 ---
 
