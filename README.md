@@ -4,6 +4,19 @@ Prédire le prix d'un joueur sur le marché des transferts en fonction de ses st
 
 ---
 
+## Aperçu rapide du code
+
+- `src/load_data.py`: charge les CSV de `data/`, applique les jointures principales
+	(players ↔ valuations ↔ clubs ↔ competitions ↔ countries) et retourne un
+	DataFrame plat prêt pour le prétraitement. Une petite fonction `load_raw_dataset`
+	expose le dataset fusionné pour être réutilisée par le pipeline.
+
+- `src/preprocess.py`: contient le pipeline de nettoyage et d'encodage. Fonctions
+	modulaires telles que `prepare_dataset`, `build_feature_target` et une grosse
+	fonction `preprocess()` qui orchestre le chargement des données, la préparation
+	et la séparation train/test (retourne `Xtest, Xtrain, Ytest, Ytrain`).
+
+
 ## Table des matières
 
 - [1. Problème et Cible](#1-problème-et-cible)
