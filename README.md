@@ -39,10 +39,11 @@ football-value-predictor/
 │   └── competitions.csv
 │
 ├── src/                        # Code source
+|   ├── downlaod_data.py        # Téléchargement du dataset
 │   ├── load_data.py            # Charger + jointure des CSV
 │   ├── preprocess.py           # Nettoyage, feature engineering
-│   ├── train.py                # Arène : entraîner 3 algos, leaderboard
-│   ├── predict.py              # Prédire avec le champion
+│   ├── train.py                # Arène : entraîner 3 algos
+│   ├── predict.py              # Prédire avec le champion, leaderboard 
 │   └── evaluate.py             # Métriques, cross-validation
 │
 ├── models/                     # Modèles
@@ -113,6 +114,5 @@ data/
 
 ---
 
-**Auteurs :** [Nom1], [Nom2], [Nom3]  
-**Dernière actualisation :** 12 juin 2026
+**Auteurs :** Maxime DANINO, Awadi BEDJA, Gurvan GODIN
 

@@ -1,1 +1,6 @@
 venv3_12
+
+# Large data files (>100MB - GitHub limit)
+data/appearances.csv
+data/game_events.csv
+data/game_lineups.csv
