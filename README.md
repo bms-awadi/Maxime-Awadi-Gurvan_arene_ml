@@ -151,6 +151,196 @@ python src/train.py
 
 ---
 
+## 4. Évaluation du modèle Champion
+
+### Résultats sur le jeu de test
+
+| Métrique | Train | Test | CV (5-Fold) |
+|----------|-------|------|-------------|
+| **R²** | 0.8288 | 0.7737 | 0.7822 ± 0.0048 |
+| **MAE** | ~0.53 (log) | ~0.53 (log) | ~0.53 ± 0.00 (log) |
+| **RMSE** | ~0.73 (log) | ~0.73 (log) | ~0.72 ± 0.00 (log) |
+| **MAPE** | 3.84 % | 4.26 % | — |
+
+**Note :** La variable cible a été transformée via `log1p(valuation_eur)` avant l'entraînement.
+Les métriques MAE et RMSE sont donc exprimées dans l'espace logarithmique (unité ≈ log(€)),
+**pas en euros réels**. Pour obtenir les erreurs en euros, appliquer `expm1()` sur les prédictions
+avant le calcul des métriques.
+
+### Interprétation du R²
+
+Un **R² de 0.77 sur le test** signifie que le modèle explique ~77 % de la variance
+de la valeur marchande — résultat correct pour ce type de données très bruitées
+(les valeurs Transfermarkt intègrent des facteurs non modélisables : médiatisation,
+clauses libératoires, négociations en cours).
+
+La faible variance du CV (± 0.0048) confirme que le modèle est **stable** : il ne
+dépend pas d'un split particulier.
+
+### Analyse de l'overfitting
+
+| | Train R² | Test R² | Écart |
+|-|----------|---------|-------|
+| Champion | 0.8288 | 0.7737 | **0.055** |
+
+L'écart de ~5.5 points est modéré. Il indique un **léger overfitting** acceptable
+pour un modèle arbre/boosting. Les pistes pour le réduire :
+- Augmenter la régularisation (`max_depth`, `min_samples_leaf`, `n_estimators`)
+- Augmenter le jeu de données (plus de saisons)
+
+### Graphiques d'évaluation
+
+**Prédit vs Réel & Distribution des résidus**
+
+Le scatter plot (axe log) montre une corrélation globalement bonne sur toute la
+plage de valeurs, avec une dispersion plus forte pour les joueurs à faible valeur
+(< 1M €), ce qui est attendu : les petits championnats ont moins de données
+cohérentes.
+
+La distribution des résidus est **centrée sur 0** et quasi-symétrique — le modèle
+n'a pas de biais systématique (pas de sur- ou sous-estimation structurelle).
+
+### Importance des features
+
+| Rang | Feature | Importance | Commentaire |
+|------|---------|------------|-------------|
+| 1 | `last_season` | ~0.48 | Data leakage potentiel |
+| 2 | `highest_market_value_in_eur` | ~0.43 | Data leakage potentiel |
+| 3 | `total_clubs` | ~0.01 | Mobilité du joueur |
+| 4 | `international_caps` | ~0.01 | Notoriété internationale |
+| 5–20 | Autres (pays, âge, taille, poste…) | < 0.01 | Contribution marginale |
+
+**Point de vigilance — Data Leakage :**
+`last_season` et `highest_market_value_in_eur` sont des features issues de
+l'historique Transfermarkt : elles contiennent une information très proche
+de la cible (valeur actuelle ≈ valeur passée). Cela explique l'essentiel
+du R² obtenu.
+
+**Pour un usage réel de scouting** (estimer la valeur d'un joueur inconnu
+du marché), ces deux features doivent être **retirées**. Le modèle devra
+alors s'appuyer uniquement sur les stats de performance (buts, assists,
+minutes jouées, poste, âge, réputation du championnat), ce qui constituera
+un vrai challenge de modélisation.
+
+### Commande d'évaluation
+
+```bash
+python -m evaluate
+# ou
+python src/evaluate.py
+```
+
+Les fichiers de résultats sont générés dans `results/` :
+- `eval_Champion.png` — Scatter plot + distribution des résidus
+- `features_Champion.png` — Top 20 features par importance
+- `metrics_Champion.json` — Métriques au format JSON
+- `leaderboard.csv` — Comparaison de tous les modèles
+
+---
+
+## 5. Prédiction avec le modèle Champion
+
+### Commandes disponibles
+
+```bash
+# joueur fictif codé en dur
+python -m predict
+
+# Prédire un joueur du dataset par son nom
+python -m predict --player "Ousmane Dembélé"
+
+# Leaderboard des joueurs sous-évalués
+python -m predict --leaderboard --top 30
+
+```
+
+---
+
+### Exemple 1, Joueur fictif (mode démo)
+
+Stats saisies :
+
+| Feature | Valeur |
+|---------|--------|
+| `sub_position` | Centre-Forward |
+| `foot` | right |
+| `championship_code` | GB1 (Premier League) |
+| `height_in_cm` | 183 cm |
+| `international_caps` | 25 |
+| `international_goals` | 8 |
+| `highest_market_value_in_eur` | 40 000 000 € |
+| `last_season` | 2024 |
+
+**Résultat :** Valeur estimée = **1.6M €**
+
+**Résultat incohérent.** Un attaquant de Premier League avec 25 sélections
+et une valeur historique de 40M € ne vaut pas 1.6M €.
+Cause : le modèle a été entraîné sur des features supplémentaires (âge, club_id,
+position encodée…) absentes ici. Le `predict_player()` en mode dict nécessite
+**exactement les mêmes colonnes** que celles vues à l'entraînement.
+**Correction à apporter** : utiliser le préprocesseur sauvegardé dans
+`champion.joblib` pour garantir la cohérence des features.
+
+---
+
+### Exemple 2, Joueur du dataset : Ousmane Dembélé
+
+```
+Joueur   : Ousmane Dembélé
+Club     : Paris Saint-Germain Football Club
+Poste    : Attack
+Âge      : 29 ans
+
+Valeur estimée : 92.9M €
+Valeur réelle  : 100.0M €
+Écart          : -7.1%  →  bien évalué
+```
+
+Ce résultat est cohérent : le modèle estime Dembélé à 92.9M € contre 100M €
+sur Transfermarkt, soit un écart de seulement 7%. C'est l'exemple type du
+joueur **correctement évalué** par le marché selon notre modèle.
+
+---
+
+### Exemple 3, Leaderboard des joueurs "sous-évalués" (top 30)
+
+```
+Rang  Joueur                  Poste       Âge   Prix marché   Valeur estimée   Écart
+1     Björn Engels            Defender    32    100K €        5.6M €           +5469%
+2     Mohamed Ihattaren       Midfield    24    300K €        10.9M €          +3538%
+3     Przemyslaw Tyton        Goalkeeper  39    75K €         2.6M €           +3407%
+...
+```
+
+**Résultats à interpréter avec précaution.**
+Le leaderboard fait remonter principalement des **joueurs en fin de carrière**
+(32–45 ans) avec une très faible valeur de marché actuelle (10K–500K €).
+
+**Explication :** le modèle surpondère `last_season` et
+`highest_market_value_in_eur` (~91% de l'importance totale). Pour un joueur
+comme Craig Gordon (44 ans, 50K €), le modèle "se souvient" que sa valeur
+historique était élevée et prédit une valeur gonflée. Transfermarkt, lui,
+reflète la réalité actuelle du marché.
+
+Ce phénomène confirme le **data leakage** identifié dans la section Évaluation.
+Pour un leaderboard de scouting fiable, retirer `last_season` et
+`highest_market_value_in_eur` des features est indispensable.
+
+---
+
+## Améliorations futures
+
+| Priorité | Action | Impact attendu |
+|----------|--------|----------------|
+| Haute | Retirer `last_season` et `highest_market_value_in_eur` | Modèle honnête pour le scouting |
+| Haute | Recalculer MAE/RMSE en euros réels (`expm1`) | Métriques interprétables |
+| Moyenne | Ajouter les stats d'`appearances.csv` (buts, assists) | Améliorer la prédiction sans leakage |
+| Moyenne | Hyperparameter tuning (`GridSearchCV`) | +2–5 points de R² |
+| Basse | Ajouter une feature `age_peak` (écart à l'âge de forme) | Capturer la non-linéarité de l'âge |
+| Basse | Cross-validation temporelle (`TimeSeriesSplit`) | Éviter le leakage temporel |
+
+---
+
 ## Références
 
 - [Kaggle: Football Data from Transfermarkt](https://www.kaggle.com/datasets/davidcariboo/player-scores) [web:14]
