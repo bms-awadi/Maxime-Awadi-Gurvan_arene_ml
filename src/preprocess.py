@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import pandas as pd
+import numpy as np
 
 # Import `load_data` de façon robuste : supporte l'exécution comme script
 # (`python src\preprocess.py`) et l'import depuis la racine du projet
@@ -155,7 +156,7 @@ def build_feature_target(df: pd.DataFrame, target_column: str = "valuation_eur")
     # Supprimer les colonnes textuelles résiduelles (name, current_club_name…)
     # non encodées dans prepare_dataset — elles ne peuvent pas être passées au modèle
     X = X.select_dtypes(include="number")
-    y = df[target_column]
+    y = np.log1p(df[target_column])
     return X, y
 
 
