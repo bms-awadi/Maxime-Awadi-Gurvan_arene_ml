@@ -48,6 +48,9 @@ def fill_missing_with_median(df: pd.DataFrame, numeric_columns: list[str]) -> pd
     for column in numeric_columns:
         if column in df.columns:
             median = df[column].median()
+            if pd.isna(median):
+                # colonne entièrement vide (pas de médiane calculable) : 0 par défaut
+                median = 0
             df[column] = df[column].fillna(median)
     return df
 
@@ -93,8 +96,8 @@ def prepare_dataset(df: pd.DataFrame) -> pd.DataFrame:
         if keep in text_columns:
             text_columns.remove(keep)
 
-    # Colonnes numériques détectées automatiquement
-    numeric_columns = df.select_dtypes(include=["int64", "float64"]).columns.tolist()
+    # Colonnes numériques détectées automatiquement (tous les sous-types numériques)
+    numeric_columns = df.select_dtypes(include="number").columns.tolist()
 
     # 1) Conversion explicite (permet d'exposer des valeurs déguisées en texte)
     df = convert_columns_numeric(df, numeric_columns)
@@ -111,8 +114,23 @@ def prepare_dataset(df: pd.DataFrame) -> pd.DataFrame:
     # seuil empirique : ne pas encoder si plus de 50 modalités uniques
     categorical_columns = [col for col in candidate_cats if df[col].nunique() <= 50]
 
+    # Imputer les NaN des colonnes catégorielles par leur mode
+    # (évite que get_dummies propage des NaN dans les colonnes dummy)
+    for col in categorical_columns:
+        if df[col].isna().any():
+            df[col] = df[col].fillna(df[col].mode()[0])
+
     # si aucune colonne ne satisfait, on passe sans erreur
     df = encode_categorical(df, categorical_columns)
+
+    # Passe finale : imputer tout NaN résiduel dans les colonnes numériques
+    # (colonnes créées après l'encodage, types non détectés en amont, etc.)
+    for col in df.select_dtypes(include="number").columns:
+        if df[col].isna().any():
+            median = df[col].median()
+            if pd.isna(median):
+                median = 0
+            df[col] = df[col].fillna(median)
 
     # NOTE: on ne retire pas ici `valuation_eur` (la cible) – laisser le caller
     # décider s'il veut extraire X/y via `build_feature_target`.
@@ -127,7 +145,16 @@ def build_feature_target(df: pd.DataFrame, target_column: str = "valuation_eur")
     """
     if target_column not in df.columns:
         raise ValueError(f"Target column '{target_column}' not found in dataset")
-    X = df.drop(columns=[target_column])
+
+    # `market_value_in_eur` (issu de `players.csv`) est un doublon exact de
+    # `valuation_eur` (issu de `player_valuations.csv`) : le laisser dans X
+    # provoque une fuite de données (R² = 100% en régression linéaire).
+    leak_columns = [col for col in ("market_value_in_eur",) if col in df.columns]
+
+    X = df.drop(columns=[target_column, *leak_columns])
+    # Supprimer les colonnes textuelles résiduelles (name, current_club_name…)
+    # non encodées dans prepare_dataset — elles ne peuvent pas être passées au modèle
+    X = X.select_dtypes(include="number")
     y = df[target_column]
     return X, y
 
